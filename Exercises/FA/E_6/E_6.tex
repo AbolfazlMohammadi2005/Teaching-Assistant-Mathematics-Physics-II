@@ -1,0 +1,162 @@
+%---------------------------------------------------
+% کلاس سند: article برای اسناد متنی، با اندازه کاغذ A4 و فونت پایه 16
+\documentclass[a4paper,16pt]{article}
+
+% بسته‌های ریاضی برای معادلات و نمادهای پیشرفته
+\usepackage{amsmath, amssymb, amstext}
+
+% بسته رنگ برای استفاده از رنگ در متن یا محیط‌ها
+\usepackage{xcolor}
+\usepackage{setspace}
+
+% بسته گرافیک برای درج تصاویر
+\usepackage{graphicx}
+
+% تنظیمات حاشیه صفحه
+\usepackage{geometry}
+
+% بسته لینک‌دهی (هایپرلینک‌ها)
+\usepackage{hyperref}
+
+% بسته صفحه‌آرایی برای تنظیم هدر و فوتر
+\usepackage{fancyhdr}
+
+
+% بسته xepersian برای پشتیبانی از زبان فارسی با XeLaTeX
+\usepackage{xepersian}
+
+% تعیین فونت فارسی (فایل فونت باید موجود باشد یا در سیستم نصب باشد)
+\settextfont{B Nazanin}
+
+% تنظیم اندازه حاشیه‌ها از هر طرف برابر با 1 اینچ
+\geometry{margin=1in}
+
+% تنظیم سبک fancy برای سربرگ و پاورقی
+\pagestyle{fancy}
+
+% سمت چپ هدر: مشخص‌کننده سری تمرین و نام درس
+\lhead{تمرین سری ششم درس ریاضی فیزیک\lr{ II} }
+
+% وسط هدر: نام دانشکده
+\chead{دانشکده فیزیک دانشگاه صنعتی خواجه نصیرالدین طوسی}
+
+% سمت راست هدر: تاریخ روز به‌صورت خودکار
+\rhead{\today}
+
+% پایین صفحه: شماره صفحه
+\cfoot{\thepage}
+
+% شروع سند
+\setstretch{1.3} % فاصله 1.3 برابر فاصله معمولی
+
+\begin{document}
+	
+	% صفحه عنوان (بدون هدر و فوتر)
+	\thispagestyle{empty}
+	\begin{center}
+		% لوگوی دانشگاه (باید فایل تصویر در مسیر پروژه باشد)
+		
+		\includegraphics[width=0.5\textwidth]{../../../images/image-E_6/K._N._Toosi_University_of_Technology.png} \\[10pt] 
+		% عنوان سند
+		\textbf{\LARGE عنوان:تمرین سری شش}\\[20pt]
+		
+		% نیم‌سال تحصیلی
+		\textbf{\LARGE نیم‌سال تحصیلی:4041 }\\[10pt]
+		
+		% نام مدرس درس
+		\textbf{\Large مدرس: دکتر امین نصیری‌راد}\\[10pt]
+		
+		% مبحث تمرین 
+		\textbf{\Large  مبحث تمرین:حساب مانده ها  }\\[10pt]
+		
+		% مهلت تحویل تمرین
+		\textbf{\Large مهلت تحویل:۷دی }
+	\end{center}
+	
+	% صفحه جدید برای ادامه سند
+	\newpage
+	
+	% ایجاد فهرست مطالب به‌صورت خودکار (براساس \section و \subsection و ...)
+	\tableofcontents
+	\newpage
+	
+	
+	\section{سوال اول}
+	محاسبه کنید
+	\[
+	\int_0^{2\pi} \frac{d\theta}{a \pm b \cos \theta}.
+	\]  
+	چه اتفاقی می‌افتد اگر \(|b| > |a|\)؟
+	
+	همچنین محاسبه کنید
+	\[
+	\int_0^{2\pi} \frac{d\theta}{a \pm b \sin \theta} = \frac{2\pi}{\sqrt{a^2 - b^2}}, \quad a > |b|.
+	\]
+	\section{سوال دوم}
+	نشان دهید که
+	\[
+	\int_0^{2\pi} \frac{d\theta}{(a + \cos\theta)^2} = \frac{\pi a}{(a^2 - 1)^{3/2}}, \quad a > 1.
+	\]
+	
+	
+	\section{سوال سوم}
+	محاسبه کنید
+	\[
+	\int_0^{2\pi} \frac{d\theta}{1 - 2t \cos\theta + t^2} = \frac{2\pi}{1 - t^2}, \quad |t| < 1.
+	\]  
+	چه اتفاقی می‌افتد اگر \(|t| > 1\) یا \(|t| = 1\)؟
+	
+	\section{سوال چهارم}
+	
+	با استفاده از حساب مانده‌ها نشان دهید که
+	\[
+	\int_0^\pi \cos^{2n} \theta\, d\theta = \pi \frac{(2n-1)!!}{(2n)!!} = \frac{\pi (2n-1)!!}{2^{2n} (n!)^2}, \quad n = 0,1,2,\dots
+	\]  
+	\textit{راهنمایی: از رابطه \(\cos \theta = \frac{1}{2}(e^{i\theta} + e^{-i\theta}) = \frac{1}{2}(z + z^{-1}), \; |z|=1\) استفاده کنید.}
+	\section{سوال پنجم}
+	انتگرال
+	\[
+	\int_{-\infty}^{\infty} \frac{\cos bx - \cos ax}{x^2}\, dx, \quad a > b > 0
+	\]  
+	را محاسبه کنید.  
+	
+	\section{سوال ششم}
+	اثبات کنید که
+	\[
+	\int_{-\infty}^{\infty} \frac{\sin^2 x}{x^2}\, dx = \pi.
+	\]  
+	\textit{راهنما: از رابطه \(\sin x = \frac{1}{2}(1 - \cos 2x)\) استفاده کنید.}
+	
+	
+	\section{سوال هفتم}
+	نشان دهید که
+	\[
+	\int_0^\pi \frac{x \sin x}{x^2 + 1}\, dx = \frac{\pi}{2e}.
+	\]
+	
+	\section{سوال هشتم}
+نشان دهید که برای \(a>0\):
+\[
+(a)\quad \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + a^2}\, dx = \frac{\pi}{a} e^{-a}.
+\]  
+اگر \(\cos x\) با \(\cos kx\) جایگزین شود، سمت راست چگونه تغییر می‌کند؟
+
+\[
+(b)\quad \int_{-\infty}^{\infty} \frac{x \sin x}{x^2 + a^2}\, dx = \pi e^{-a}.
+\]  
+اگر \(\sin x\) با \(\sin kx\) جایگزین شود، سمت راست چگونه تغییر می‌کند؟
+	
+	\section{سوال نهم}
+	
+	یک محاسبه مکانیک کوانتومی برای احتمال گذار منجر به تابع
+	\[
+	f(t,\omega) = \frac{2(1 - \cos \omega t)}{\omega^2}
+	\]  
+	می‌شود. نشان دهید که
+	\[
+	\int_{-\infty}^{\infty} f(t,\omega)\, d\omega = 2\pi t.
+	\]
+	\\
+	\vspace{10pt}
+	\textbf{موفق باشید.}
+\end{document}

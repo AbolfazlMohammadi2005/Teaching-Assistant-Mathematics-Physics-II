@@ -1,0 +1,166 @@
+%---------------------------------------------------
+% کلاس سند: article برای اسناد متنی، با اندازه کاغذ A4 و فونت پایه 16
+\documentclass[a4paper,16pt]{article}
+
+% بسته‌های ریاضی برای معادلات و نمادهای پیشرفته
+\usepackage{amsmath, amssymb, amstext}
+
+% بسته رنگ برای استفاده از رنگ در متن یا محیط‌ها
+\usepackage{xcolor}
+
+% بسته گرافیک برای درج تصاویر
+\usepackage{graphicx}
+
+% تنظیمات حاشیه صفحه
+\usepackage{geometry}
+
+% بسته لینک‌دهی (هایپرلینک‌ها)
+\usepackage{hyperref}
+
+% بسته صفحه‌آرایی برای تنظیم هدر و فوتر
+\usepackage{fancyhdr}
+
+
+% بسته xepersian برای پشتیبانی از زبان فارسی با XeLaTeX
+\usepackage{xepersian}
+
+% تعیین فونت فارسی (فایل فونت باید موجود باشد یا در سیستم نصب باشد)
+\settextfont{B Nazanin}
+
+% تنظیم اندازه حاشیه‌ها از هر طرف برابر با 1 اینچ
+\geometry{margin=1in}
+
+% تنظیم سبک fancy برای سربرگ و پاورقی
+\pagestyle{fancy}
+
+% سمت چپ هدر: مشخص‌کننده سری تمرین و نام درس
+
+
+% وسط هدر: نام دانشکده
+\chead{دانشکده فیزیک دانشگاه صنعتی خواجه نصیرالدین طوسی}
+
+% سمت راست هدر: تاریخ روز به‌صورت خودکار
+\rhead{\today}
+
+% پایین صفحه: شماره صفحه
+\cfoot{\thepage}
+
+% شروع سند
+\begin{document}
+	
+	% صفحه عنوان (بدون هدر و فوتر)
+	\thispagestyle{empty}
+	\begin{center}
+		% لوگوی دانشگاه (باید فایل تصویر در مسیر پروژه باشد)
+	\includegraphics[width=0.5\textwidth]{../../../images/image-Bonus/K._N._Toosi_University_of_Technology.png} \\[10pt] 
+		
+		% عنوان سند
+		\textbf{\LARGE عنوان:تمرین امتیازی سری اول}\\[20pt]
+		
+		% نیم‌سال تحصیلی
+		\textbf{\LARGE نیم‌سال تحصیلی:4041 }\\[10pt]
+		
+		% نام مدرس درس
+		\textbf{\Large مدرس:دکتر امین نصیری‌راد }\\[10pt]
+		
+		% مبحث تمرین 
+		\textbf{\Large مبحث تمرین:آنالیز مختلط  }\\[10pt]
+		
+		% مهلت تحویل تمرین
+		\textbf{\Large مهلت تحویل:۲۳آبان }
+	\end{center}
+	
+	% صفحه جدید برای ادامه سند
+	\newpage
+	
+	% ایجاد فهرست مطالب به‌صورت خودکار (براساس \section و \subsection و ...)
+	\tableofcontents
+	\newpage
+	
+	% شروع بخش سوالات - سوال اول
+	\section{سوال اول}
+	تحلیلی بودن توابع زیر را بررسی کنید.
+	
+	\begin{enumerate}
+		\item \( f(z) = \mathrm{Re}(z) \)
+		\item \( f(z) = z \, \mathrm{Im}(z) \)
+		\item \( f(z) = z \, \mathrm{Im}(z^2) \)
+		\item \( f(z) = e^{z} \)
+		\item \( f(z) = \cos z \)
+		\item \( f(z) = \cosh z \)
+		\item \( f(z) = z^8 \)
+		\item \( f(z) = \dfrac{z}{z+1} \)
+		\item \( f(z) = z\,\mathrm{Re}(z + i z^2) \)
+	\end{enumerate}
+	\section{سوال دوم}
+	همساز بودن توابع زیر را بررسی کنید.  
+	در صورت همساز بودن، مزدوج همساز آن‌ها را بیابید.
+	
+	\begin{enumerate}
+		\item \( u = x^2 - y^2 \)
+		\item \( u = \mathrm{Re}(\sin z) \)
+		\item \( v = \ln|z| \)
+	\end{enumerate}
+	
+	\textbf{مثال ۴:}  
+	مقادیر \(\alpha\) و \(\beta\) را طوری بیابید که تابع  
+	\( u = e^{\alpha x} \cos(\beta y) \)  
+	همساز باشد.
+	
+	\vspace{8pt}
+	\textbf{مثال ۵:}  
+	 تابع  
+	\( u = e^{a x+byi} \)  
+	به ازای چه مقادیری از \( a \) و \( b \) همساز است؟
+	
+	\section{سوال سوم}
+	سری لوران توابع زیر را بیابید:
+	
+	\begin{enumerate}
+		\item \( f(z) = \dfrac{\sin(z)}{z^2} \)
+		\item \( f(z) = \dfrac{e^{1/z}}{z - 1} \)
+		\item \( f(z) = \dfrac{1 - \cos(z}{z^2} \)
+		\item \( f(z) = \dfrac{\cos(z)}{z^2} \)
+		\item \( f(z) = \dfrac{\ln(1+z)}{z^3} \)
+		\item \( f(z) = \dfrac{1}{z\ln (1+z)} \)
+		
+	\end{enumerate}
+	\section{سوال چهارم}
+	
+	حاصل انتگرال زیر را محاسبه کنید:
+	
+	\[
+	\oint_{C} z^2 \, dz
+	\]
+	
+	که در آن مسیر \( C \) دارای معادله‌ی پارامتری زیر است:
+	
+	\[
+	\begin{cases}
+		z = t + i t^2 \\
+		0 \le t \le 1
+	\end{cases}
+	\]
+	\section{سوال پنجم}
+	
+	حاصل انتگرال زیر را بیابید:
+	
+	\[
+	\int_{0}^{1+i} {(ze^{z}+ |z|+e^{z})dz}
+	\]
+	
+	که در آن مسیر انتگرال، خط \( y = x \) می‌باشد.
+	\section{سوال هفتم}
+	
+	اگر \( C \) پاره‌خط واصل از نقطه‌ی \( i \) به نقطه‌ی \( 1 \) باشد،  
+	حاصل انتگرال زیر را بیابید:
+	
+	\[
+	\oint_{C} z \, z^{*} \, d z^{*}
+	\]
+	\vspace{10pt}
+	
+	\textbf{موفق باشید.}
+	
+	% پایان سند
+\end{document}
