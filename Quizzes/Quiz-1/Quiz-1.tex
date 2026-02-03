@@ -1,0 +1,243 @@
+\documentclass[a4paper,16pt]{article}
+
+\usepackage{amsmath, amssymb, amstext}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xepersian}
+
+\settextfont{B Nazanin}
+\geometry{margin=1in}
+
+\pagestyle{fancy}
+\setlength{\headheight}{18pt}
+
+\chead{دانشکده فیزیک دانشگاه صنعتی خواجه نصیرالدین طوسی}
+\lhead{تمرین امتیازی سری دوم}
+\rhead{۱۹ دی ۱۴۰۳}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\thispagestyle{empty}
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{../../images/image-Bonus/K._N._Toosi_University_of_Technology.png} \\[10pt] 
+		
+		\textbf{\LARGE عنوان: تمرین امتیازی سری دوم}\\[20pt]
+		\textbf{\LARGE نیم‌سال تحصیلی: ۴۰۴۱}\\[10pt]
+		\textbf{\Large مدرس: دکتر امین نصیری‌راد}\\[10pt]
+		\textbf{\Large مبحث تمرین: آنالیز مختلط و نگاشت}\\[10pt]
+		\textbf{\Large مهلت تحویل: ۱۹ دی}
+	\end{center}
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	
+	%------------------------------------------------
+	
+	\section{سوال اول}
+	
+	\textbf{سوال:} ظرفیت خازن بین صفحات نشان داده شده در نمودار زیر را با استفاده از نگاشت مختلط مناسب بیابید.  
+	برای تخت کردن ناحیه و محاسبه ظرفیت، از نگاشت
+	\[
+	w = z^2
+	\]
+	استفاده کنید.
+	
+	\def\a{2}
+	
+	\begin{center}
+		\textbf{نمودار $y = \pm \frac{\a}{x}$}
+	\end{center}
+	
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				axis lines = middle,
+				xlabel = $x$,
+				ylabel = $y$,
+				grid = both,
+				xmin=-5, xmax=5,
+				ymin=-5, ymax=5,
+				samples=200,
+				legend pos=north east
+				]
+				\addplot[blue, thick, domain=-5:-0.1] {\a/x};
+				\addlegendentry{$y=\frac{\a}{x}$}
+				
+				\addplot[red, thick, domain=-5:-0.1] {-\a/x};
+				\addlegendentry{$y=-\frac{\a}{x}$}
+				
+				\addplot[blue, thick, domain=0.1:5] {\a/x};
+				\addplot[red, thick, domain=0.1:5] {-\a/x};
+				
+				\addplot[dashed, gray] coordinates {(0,-5) (0,5)};
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	
+	%------------------------------------------------
+	
+	\section{سوال دوم}
+	
+	یک ذره به جرم $m$ تحت اثر نیروی مرکزی
+	\[
+	\vec{F}(r) = -k \frac{\vec{r}}{r^3}, \quad k>0
+	\]
+	قرار دارد. معادلات حرکت آن در مختصات قطبی $(r,\theta)$ به صورت زیر است:
+	\[
+	m(\ddot{r} - r\dot{\theta}^2) = -\frac{k}{r^2}, \qquad
+	m r^2 \dot{\theta} = L
+	\]
+	
+	\begin{enumerate}
+		\item معادله مسیر $r(\theta)$ را با استفاده از نگاشت مختلط
+		\[
+		z = r e^{i\theta}
+		\]
+		بدست آورید.
+		
+		\item شرایط لازم برای تشکیل یک \textbf{مدار بسته} را بررسی کنید.
+		
+		\item انرژی کل ذره $E$ را بر حسب $r$، $\dot r$ و $L$ بنویسید و فاصله‌های کمینه و بیشینه از مرکز را تعیین کنید.
+		
+		\item مسیر ذره را برای مقادیر مشخص $E$ و $L$ رسم کنید.
+		
+		\item بررسی کنید اگر نیرو به صورت
+		\[
+		F(r) \sim \frac{1}{r^{2+\epsilon}}
+		\]
+		تغییر کند، چه اثری بر بسته بودن مدار خواهد داشت.
+	\end{enumerate}
+	
+	\textbf{راهنمایی:}
+	\begin{itemize}
+		\item نگاشت مختلط تحلیل معادلات قطبی را ساده می‌کند.
+		\item مدارهای بسته تنها برای نیروهای خاصی امکان‌پذیرند.
+	\end{itemize}
+	
+	
+	
+	\section{سوال سوم}
+	
+	یک دستگاه گرمایی یک چرخه \textbf{کارنو} انجام می‌دهد که در آن گاز ایده‌آل تک‌اتمی بین دو منبع حرارتی با دماهای
+	$T_H$ و $T_C$
+	حرکت می‌کند.  
+	مسیرهای انبساط و تراکم به صورت غیرخطی تعریف شده‌اند:
+	\[
+	V(T) = V_0 \left(1 + \alpha \frac{T}{T_H}\right)^n
+	\]
+	که در آن $n$ عددی مشخص و $\alpha \ll 1$ است.
+	
+	\begin{enumerate}
+		\item معادله $P(V)$ برای مسیرهای انبساط و تراکم را بر حسب $T$ بدست آورید.
+		
+		\item کار انجام شده در هر مسیر را با انتگرال‌گیری محاسبه کنید:
+		\[
+		W = \int P\, dV
+		\]
+		
+		\item کار خالص چرخه و بازده $\eta$ را با در نظر گرفتن تغییرات غیرخطی حجم بیابید.
+		
+		\item نمودار $P\!-\!V$ چرخه را برای مقادیر مشخص $V_0$، $\alpha$ و $n$ رسم کنید.
+		
+		\item بررسی کنید که چگونه تغییر $n$ یا $\alpha$ بر بازده چرخه تأثیر می‌گذارد.
+	\end{enumerate}
+	
+	\textbf{راهنمایی:}
+	\begin{itemize}
+		\item از رابطه گاز ایده‌آل $PV = nRT$ استفاده کنید.
+		\item برای $\alpha \ll 1$ می‌توان از بسط سری استفاده کرد.
+		\item بازده را با $\eta = 1 - T_C/T_H$ مقایسه کنید.
+	\end{itemize}
+	
+	%------------------------------------------------
+	
+	\section{سوال چهارم}
+	
+	انتگرال زیر را محاسبه کنید:
+	\[
+	I = \int_0^\infty \frac{\ln(x)}{(1+x^2)^2}\, dx
+	\]
+	
+	\begin{enumerate}
+		\item با استفاده از جایگزینی مناسب، انتگرال را به فرم قابل حل تبدیل کنید.
+		
+		\item در صورت نیاز از \textbf{انتگرال‌گیری جزء‌به‌جزء} یا \textbf{تبدیل لاپلاس} استفاده کنید.
+		
+		\item مقدار نهایی $I$ را به صورت تحلیلی بدست آورید.
+		
+		\item بررسی کنید اگر به جای $(1+x^2)^2$ از $(1+x^2)^n$ استفاده شود، نتیجه چگونه تغییر می‌کند.
+	\end{enumerate}
+	
+	%------------------------------------------------
+	
+	\section{سوال پنجم}
+	
+	انتگرال زیر را محاسبه کنید:
+	\[
+	I = \int_{-\infty}^{\infty} \frac{x^2}{x^4 + 1}\, dx
+	\]
+	
+	%------------------------------------------------
+	
+	\section{سوال ششم}
+	
+	انتگرال زیر را محاسبه کنید:
+	\[
+	I = \int_{-\infty}^{\infty} \frac{e^{ix}}{x^4 + 4}\, dx
+	\]
+	
+	\begin{enumerate}
+		\item تابع مختلط
+		\[
+		f(z) = \frac{e^{iz}}{z^4 + 4}
+		\]
+		را در صفحه مختلط در نظر بگیرید و قطب‌های آن را مشخص کنید.
+		
+		\item مسیر انتگرال بسته شامل \textbf{نیم‌صفحه بالایی} و یک نیم‌دایره بزرگ رسم کنید و از \textbf{قضیه مانده‌ها} استفاده کنید.
+		
+		\item با محاسبه مانده‌ها در قطب‌های نیم‌صفحه بالایی، مقدار انتگرال را بدست آورید.
+		
+		\item بررسی کنید اگر مخرج به صورت $z^n + a^n$ (با $n$ زوج) باشد، روش حل چه تغییری می‌کند.
+	\end{enumerate}
+	
+	%------------------------------------------------
+	
+	\section{سوال هفتم}
+	
+	تابع زیر را در نظر بگیرید:
+	\[
+	f(t) = \frac{t}{1+t^4}, \qquad -\infty < t < \infty
+	\]
+	
+	\begin{enumerate}
+		\item تبدیل فوریه تابع را تعریف کنید:
+		\[
+		F(\omega) = \int_{-\infty}^{\infty}
+		\frac{t}{1+t^4} e^{-i\omega t}\, dt
+		\]
+		
+		\item با استفاده از \textbf{روش حساب مانده‌ها} مقدار انتگرال را محاسبه کنید.
+		
+		\item قطب‌های تابع مختلط
+		\[
+		\frac{z e^{-i\omega z}}{1+z^4}
+		\]
+		را پیدا کرده و مانده‌های مربوط به نیم‌صفحه بالایی را محاسبه کنید.
+		
+		\item بررسی کنید رفتار $F(\omega)$ برای $|\omega| \to \infty$ چگونه است.
+		
+		\item نمودار $|F(\omega)|$ را برای $\omega > 0$ رسم کنید.
+	\end{enumerate}
+	
+	\vspace{10pt}
+	\textbf{موفق باشید.}
+	
