@@ -1,6 +1,0 @@
-\contentsline {section}{\numberline {1}سوال اول}{3}{section.1}%
-\contentsline {section}{\numberline {2}سوال دوم}{3}{section.2}%
-\contentsline {section}{\numberline {3}سوال سوم}{3}{section.3}%
-\contentsline {section}{\numberline {4}سوال چهارم}{3}{section.4}%
-\contentsline {section}{\numberline {5}سوال پنجم}{4}{section.5}%
-\contentsline {section}{\numberline {6}سوال هفتم}{4}{section.6}%
